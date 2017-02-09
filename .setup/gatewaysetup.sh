@@ -15,7 +15,7 @@ NODEDIR='/opt/nodejs'
 NODEARCH=$(uname -m)
 
 echo -e "${GRN}#########################################################################${NC}"
-echo -e "${GRN}#                 Low Power Lab Gateway App Setup                       #${NC}"
+echo -e "${GRN}#                 Low Power Lab Gateway App Setup (Pi 1 B)              #${NC}"
 echo -e "${GRN}#########################################################################${NC}"
 echo -e "${YLW}Note: script can take long on older Pis${NC}"
 echo -e "${YLW}Note: setup requires your input at certain steps${NC}"
@@ -45,44 +45,38 @@ sudo apt-get -y install php5-common php5-cli php5-fpm
 
 #install NodeJS
 echo -e "${CYAN}************* STEP: Install NodeJS *************${NC}"
-if [[ "$NODEARCH" == "armv6l" ]] ; then
-  mkdir ~/tempnode -p
-  cd ~/tempnode
-  wget https://nodejs.org/dist/v4.6.2/node-v4.6.2-linux-armv6l.tar.gz
-  tar -xzf node-v4.6.2-linux-armv6l.tar.gz
-  sudo rm node-v4.6.2-linux-armv6l.tar.gz
-  sudo rm -rf $NODEDIR
-  mkdir -p $NODEDIR
-  sudo mv node-v4.6.2-linux-armv6l $NODEDIR
-  sudo rm -rf ~/tempnode;
-  cd ~/
-  # sudo unlink /usr/bin/node;
-  # sudo unlink /usr/sbin/node;
-  # sudo unlink /sbin/node;
-  # sudo unlink /usr/local/bin/node;
-  # sudo unlink /usr/bin/npm;
-  # sudo unlink /usr/sbin/npm;
-  # sudo unlink /sbin/npm;
-  # sudo unlink /usr/local/bin/npm;
-  # sudo ln -s /opt/node/bin/node /usr/bin/node;
-  # sudo ln -s opt/node/bin/node /usr/sbin/node;
-  # sudo ln -s /opt/node/bin/node /sbin/node;
-  # sudo ln -s /opt/node/bin/node /usr/local/bin/node;
-  # sudo ln -s /opt/node/bin/npm /usr/bin/npm;
-  # sudo ln -s /opt/node/bin/npm /usr/sbin/npm;
-  # sudo ln -s /opt/node/bin/npm /sbin/npm;
-  # sudo ln -s /opt/node/bin/npm /usr/local/bin/npm;
-  echo 'Creating symbolic link to node in /usr/bin/'
-  sudo ln -sf $NODEDIR/bin/node /usr/bin/node
-  echo 'Creating symbolic link to nodejs in /usr/bin/'
-  sudo ln -sf $NODEDIR/bin/node /usr/bin/nodejs
-  echo 'Creating symbolic link to npm in /usr/bin/'
-  sudo ln -sf $NODEDIR/bin/npm /usr/bin/npm
-else
-  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -;
-  sudo apt-get -y install nodejs;
-fi
-
+mkdir ~/tempnode -p
+cd ~/tempnode
+wget https://nodejs.org/dist/v4.7.7/node-v4.7.7-linux-armv6l.tar.gz
+tar -xzf node-v4.7.7-linux-armv6l.tar.gz
+sudo rm node-v4.7.7-linux-armv6l.tar.gz
+sudo rm -rf $NODEDIR
+mkdir -p $NODEDIR
+sudo mv node-v4.7.7-linux-armv6l $NODEDIR
+sudo rm -rf ~/tempnode;
+cd ~/
+# sudo unlink /usr/bin/node;
+# sudo unlink /usr/sbin/node;
+# sudo unlink /sbin/node;
+# sudo unlink /usr/local/bin/node;
+# sudo unlink /usr/bin/npm;
+# sudo unlink /usr/sbin/npm;
+# sudo unlink /sbin/npm;
+# sudo unlink /usr/local/bin/npm;
+# sudo ln -s /opt/node/bin/node /usr/bin/node;
+# sudo ln -s opt/node/bin/node /usr/sbin/node;
+# sudo ln -s /opt/node/bin/node /sbin/node;
+# sudo ln -s /opt/node/bin/node /usr/local/bin/node;
+# sudo ln -s /opt/node/bin/npm /usr/bin/npm;
+# sudo ln -s /opt/node/bin/npm /usr/sbin/npm;
+# sudo ln -s /opt/node/bin/npm /sbin/npm;
+# sudo ln -s /opt/node/bin/npm /usr/local/bin/npm;
+echo 'Creating symbolic link to node in /usr/bin/'
+sudo ln -sf $NODEDIR/bin/node /usr/bin/node
+echo 'Creating symbolic link to nodejs in /usr/bin/'
+sudo ln -sf $NODEDIR/bin/node /usr/bin/nodejs
+echo 'Creating symbolic link to npm in /usr/bin/'
+sudo ln -sf $NODEDIR/bin/npm /usr/bin/npm
 
 echo -e "${CYAN}************* STEP: Setup Gateway app & dependencies *************${NC}"
 sudo mkdir -p $APPSRVDIR    #main dir where gateway app lives
