@@ -47,12 +47,12 @@ sudo apt-get -y install php5-common php5-cli php5-fpm
 echo -e "${CYAN}************* STEP: Install NodeJS *************${NC}"
 mkdir ~/tempnode -p
 cd ~/tempnode
-wget https://nodejs.org/dist/v4.7.7/node-v4.7.7-linux-armv6l.tar.gz
-tar -xzf node-v4.7.7-linux-armv6l.tar.gz
-sudo rm node-v4.7.7-linux-armv6l.tar.gz
+wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-armv6l.tar.gz
+tar -xzf node-v4.4.7-linux-armv6l.tar.gz
+sudo rm node-v4.4.7-linux-armv6l.tar.gz
 sudo rm -rf $NODEDIR
 mkdir -p $NODEDIR
-sudo mv node-v4.7.7-linux-armv6l $NODEDIR
+sudo mv node-v4.4.7-linux-armv6l $NODEDIR
 sudo rm -rf ~/tempnode;
 cd ~/
 # sudo unlink /usr/bin/node;
