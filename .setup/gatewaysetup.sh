@@ -82,9 +82,9 @@ echo -e "${CYAN}************* STEP: Setup Gateway app & dependencies ***********
 sudo mkdir -p $APPSRVDIR    #main dir where gateway app lives
 cd $APPSRVDIR || exit
 #could use git clone but that requires empty target directory which won't work if executed repeatedly
-#git clone --single-branch https://github.com/LowPowerLab/RaspberryPi-Gateway.git $APPSRVDIR
+#git clone --single-branch https://github.com/Atalonica/RaspberryPi-Gateway.git $APPSRVDIR
 git init
-git remote add origin https://github.com/LowPowerLab/RaspberryPi-Gateway.git
+git remote add origin https://github.com/Atalonica/RaspberryPi-Gateway.git
 git pull origin master
 sudo npm install --unsafe-perm --build-from-source
 sudo npm cache clean    #clear any caches/incomplete installs
