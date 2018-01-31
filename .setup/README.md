@@ -2,7 +2,7 @@
 Setup the IoT Gateway app on your your raw raspbian image (ex raspbian jessie lite) like this:
 
 - `cd /home/pi`
-- `sudo wget https://raw.githubusercontent.com/LowPowerLab/RaspberryPi-Gateway/master/.setup/gatewaysetup.sh`
+- `sudo wget https://raw.githubusercontent.com/Atalonica/RaspberryPi-Gateway/master/.setup/gatewaysetup.sh`
 - `sudo bash gatewaysetup.sh && sudo rm gatewaysetup.sh`
 - `PiBakeryConfig.xml` - sample PiBakery configuration
 
